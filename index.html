@@ -44,10 +44,11 @@
       }
       //rendering loop
       function animate() {
-        starGeo.verticies.forEach(p=>{
-          p.velocity += p.acceleration;
+        starGeo.vertices.forEach(p => {
+          p.velocity += p.acceleration
           p.y -= p.velocity;
-          if(p.y < -200) {
+
+          if (p.y < -200) {
             p.y = 200;
             p.velocity = 0;
           }
