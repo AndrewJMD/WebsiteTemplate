@@ -2,6 +2,54 @@ body {
   width: 100vw;
   height: 100vh;
   margin: 0;
+  padding: 0;
   background: black;
   overflow: hidden;
+}
+
+.title
+{
+  text-align: center;
+  margin-top: 40vh;
+}
+.title h1
+{
+  color: white;
+}
+.container
+{
+  margin-bottom: 0px;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+}
+.container .boxes
+{
+  margin-bottom: 0px;
+  position: relative;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  border-color: white;
+  border-radius: 18px;
+  text-align: center;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.container .boxes:hover
+{
+  transform: translateY(-10px);
+}
+.container .boxes:before
+{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
 }
