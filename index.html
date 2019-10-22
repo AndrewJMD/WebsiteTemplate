@@ -22,16 +22,16 @@
         document.body.appendChild(renderer.domElement);
         starGeo = new THREE.Geometry();
         for(let i=0;i<6000;i++) {
-            star = new THREE.Vector3(
+            let star = new THREE.Vector3(
             Math.random() * 600 - 300,
             Math.random() * 600 - 300,
             Math.random() * 600 - 300
           );
-          star.velocity = 0
+          star.velocity = 0;
           star.acceleration = 0.02;
           starGeo.vertices.push(star);
         }
-        let sprite = new THREE.TextureLoader().load('images/star.png')
+        let sprite = new THREE.TextureLoader().load('images/star.png');
         let starMaterial = new THREE.PointsMaterial({
           color: 0xaaaaaa,
           size: 0.7,
@@ -39,15 +39,15 @@
         });
 
         stars = new THREE.Points(starGeo,starMaterial);
-        scene.add(stars)
+        scene.add(stars);
         animate();
       }
       //rendering loop
       function animate() {
-        starGeo.verticies.forEach(p=>{
+        starGeo.verticies.forEach(p => {
           p.velocity += p.acceleration;
           p.y -= p.velocity;
-          if(p.y <-200) {
+          if(p.y < -200) {
             p.y = 200;
             p.velocity = 0;
           }
